@@ -6,7 +6,6 @@
     font-style: normal;
   }
     
-  
   body {
     background: #F0F0E8;
     overflow-x: hidden;
@@ -31,7 +30,6 @@
     font-size: 1.2vw;
   }
     
-  
   .bg-image {
     background:linear-gradient(45deg, #e73a06, #70c7ca,#de8282,#23d541);
     background-size: 400% 400%;
@@ -45,32 +43,41 @@
   
   }
     
-  
   .header-class {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: radial-gradient(ellipse at top, #75e664, transparent),
-  radial-gradient(ellipse at bottom, #75e664, transparent); 
+    background: rgba(128, 128, 128, 0.329);
   }
+
+  .header-class img{
+    padding: 50px;
+  }
+
+
+
   .container-title h1{
-    -webkit-background-clip:text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     background-image: url('./img/fondo_letra.gif');
     background-size: contain;  
+    font-size: 10vw;
   }
   
   .login-signin{
+
+    padding: 50px 100px;
     display:flex;
     flex-direction: row;
+    font-size: larger;
   }
   
   .signin{
     display:flex;
     flex-direction: column;
-  
   }
+  
   .signin-line{
     text-decoration: none;
     color:white;
@@ -93,15 +100,13 @@
                   0px 0px 7px #b00000;  
   }
   
-  .between-sections {
-    height: 4vh;
-  }
 
   .title-words {
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 0px;
   }    
   .shadows {
       position: relative;
@@ -123,9 +128,8 @@
   /* TODO barra de Navegacion */
 
   .navigation {
-    box-sizing: border-box;
-    background: radial-gradient(ellipse at top, #75e664, transparent),
-    radial-gradient(ellipse at bottom, #75e664, transparent);
+    text-decoration: none;
+    background: transparent;
     overflow: auto;
     padding: 18px 50px;
     position: relative;
@@ -134,7 +138,11 @@
     z-index: 999;
   }
 
-  .list {
+
+  .navigation li{
+    text-decoration: none;
+    list-style: none;
+    color: black;
     padding: 0;
     margin: 0;
   }
@@ -148,9 +156,23 @@
     text-transform: uppercase;
   }
 
-  /* .active {
+  .link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFF;
+    
+  }
+
+  .line:visited {
+    text-decoration: none;
+  }
+
+  .active {
     color: #88CCF1;
-  } */
+  } 
 
 /* TODO TABLE */
 
@@ -160,14 +182,22 @@ table {
   overflow-y: scroll;
   position: static;
   width: 65%;
+  border-radius: 8px;
+  border: black ;
+  padding: 20px;
+  
 }
 
 thead th {
-  background: radial-gradient(ellipse at top, #75e664, transparent),
-  radial-gradient(ellipse at bottom, #75e664, transparent);
+  background: darkgray;
   color: #FFF;
   letter-spacing: 2px;
   text-transform: uppercase;
+  
+}
+
+tbody tr:nth-child(even){
+  background: gainsboro;
 }
 
 tr {
@@ -195,6 +225,11 @@ th, td {
     align-items: center;
     margin: 2vw;
   }
+
+  .networks a:hover{
+    transform: scale(1.5);
+  }
+
   .icon {
     width: 25px;
   }
@@ -219,14 +254,25 @@ th, td {
    
   .footer-container{
     width:100%;
+    padding: 20px 0px;
   }
   .footer-row{
     display: flex;
     justify-content: center;
     gap: 80px;
+    padding: 20px 0px;
   }
   .footer-col{
     text-align: left;
+  }
+
+  .footer-col h3{
+    padding: 20px 0px 20px 0px;
+  }
+
+  .footer-col p{
+    justify-self: center;
+    
   }
    
   .footer-col ul{
