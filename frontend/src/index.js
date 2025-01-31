@@ -14,9 +14,9 @@ window.readProducts = function() {
         if (roleSession == 'admin') {
             //Elemento 1 pestaña de alta de productos
             let adminHTMLElement01 = document.createElement('li'); //Creamos el elemento que añadiremos en este caso es un 'li'
-            adminHTMLElement01.classList.add("nav-item"); //Le añadimos la clase a la que pertenece
+            adminHTMLElement01.classList.add("line"); //Le añadimos la clase a la que pertenece
             let adminHTMLElement01Interior = document.createElement('a'); //Creamos un elemento que sera el hijo del que hemos creado previamente
-            adminHTMLElement01Interior.classList.add("nav-link"); //Le añadimos la clase
+            adminHTMLElement01Interior.classList.add("link"); //Le añadimos la clase
             adminHTMLElement01Interior.href = 'register.html'; //Le añadimos el 'href' con la direccion que queremos
             let interior01 = document.createTextNode('Alta de Producto'); //Añadimos el contenido de TEXTO que ira dentro
             adminHTMLElement01Interior.appendChild(interior01); //Añadimos al elemento que sera el hijo el contenido de texto
@@ -24,9 +24,9 @@ window.readProducts = function() {
             document.getElementById("menuUser").parentElement.appendChild(adminHTMLElement01); //añadimos al documento el elemento padre que contiene todo
             //Elemento2 pestaña de proveedores
             let adminHTMLElement02 = document.createElement('li');
-            adminHTMLElement02.classList.add("nav-item");
+            adminHTMLElement02.classList.add("line");
             let adminHTMLElement02Interior = document.createElement('a');
-            adminHTMLElement02Interior.classList.add("nav-link");
+            adminHTMLElement02Interior.classList.add("link");
             adminHTMLElement02Interior.href = 'indexSupplier.html';
             let interior02 = document.createTextNode('Listado de Proveedores');
             adminHTMLElement02Interior.appendChild(interior02);
@@ -34,9 +34,9 @@ window.readProducts = function() {
             document.getElementById("menuUser").parentElement.appendChild(adminHTMLElement02);
             //Elemento3 pestaña de usuarios
             let adminHTMLElement03 = document.createElement('li');
-            adminHTMLElement03.classList.add("nav-item");
+            adminHTMLElement03.classList.add("line");
             let adminHTMLElement03Interior = document.createElement('a');
-            adminHTMLElement03Interior.classList.add("nav-link");
+            adminHTMLElement03Interior.classList.add("link");
             adminHTMLElement03Interior.href = 'indexUser.html';
             let interior03 = document.createTextNode('Listado de Usuarios');
             adminHTMLElement03Interior.appendChild(interior03);
@@ -46,9 +46,9 @@ window.readProducts = function() {
             //Elemento4 pestaña de Modificacion datos del usuario no admin
             if (usernameSession !== "no user") {
                 let adminHTMLElement04 = document.createElement('li');
-                adminHTMLElement04.classList.add("nav-item");
+                adminHTMLElement04.classList.add("line");
                 let adminHTMLElement04Interior = document.createElement('a');
-                adminHTMLElement04Interior.classList.add("nav-link");
+                adminHTMLElement04Interior.classList.add("link");
                 adminHTMLElement04Interior.href = 'modifyUser.html';
                 let interior04 = document.createTextNode('Modificacion datos de tu Usuario');
                 adminHTMLElement04Interior.appendChild(interior04);
