@@ -57,16 +57,11 @@
 
 
   .container-title h1{
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-image: url('./img/fondo_letra.gif');
-    background-size: contain;  
-    font-size: 10vw;
+    color: black;
+    font-size: 8vw;
   }
   
   .login-signin{
-
     padding: 50px 100px;
     display:flex;
     flex-direction: row;
@@ -129,6 +124,7 @@
 
   .navigation {
     text-decoration: none;
+    font-weight: bold;
     background: transparent;
     overflow: auto;
     padding: 18px 50px;
@@ -171,13 +167,15 @@
   }
 
   .active {
-    color: #88CCF1;
+    color: black;
+    font-weight: bold;
   } 
+  
+
 
 /* TODO TABLE */
 
 table {
-  left: 10%;
   margin: 2% auto;
   overflow-y: scroll;
   position: static;
@@ -185,7 +183,6 @@ table {
   border-radius: 8px;
   border: black ;
   padding: 20px;
-  
 }
 
 thead th {
@@ -193,7 +190,6 @@ thead th {
   color: #FFF;
   letter-spacing: 2px;
   text-transform: uppercase;
-  
 }
 
 tbody tr:nth-child(even){
@@ -218,7 +214,6 @@ th, td {
   top:10px;
 }
 
-
   .networks {
     display: flex;
     justify-content: space-around;
@@ -227,22 +222,16 @@ th, td {
   }
 
   .networks a:hover{
-    transform: scale(1.5);
+    transform: scale(2);
   }
 
   .icon {
     width: 25px;
   }
   
-  .icon:hover {
-    background: white;
-    border-radius: 6%; 
-    box-shadow: 0px 0px 7px #54e3fd inset,
-                  0px 0px 7px #54e3fd;  
-  } 
-  
+ 
   footer{
-    background-image: url('./img/fondo_letra.gif');
+    background-color: black;
     background-size: contain;
     color:#fff;
     padding: 20 px 0;
@@ -289,9 +278,71 @@ th, td {
     text-decoration: none;
     font-size: 1.2vw;
   }
-  .footer-col ul li a:hover {
-    background: rgb(50, 146, 205);
-    border-radius: 6%; 
-    box-shadow: 0px 0px 7px rgb(50, 146, 205) inset,
-                  0px 0px 7px rgb(50, 146, 205);  
+
+  .footer-col ul li:hover {
+    text-decoration: none;
+    transform: scale(1.1);  
   }   
+
+
+/* LOGIN STYLES */
+
+.red-btn {
+  background-color: red;
+  color: rgb(255, 251, 251);
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.green-btn {
+   background-color:rgb(0, 255, 34)d;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-left: 25%;
+}
+
+.form-item {
+  color: #FFF;
+  padding: 10px;
+  font-size: 1.1vw;
+} 
+
+.form-control {
+  border-radius: 2px;
+  border-color: rgb(255, 255, 255);
+  padding: 5px;
+}
+.form-container {
+ justify-content: center;
+ margin: auto;
+
+}
+
+.login-section {
+  padding: 20px;
+  display: flex;
+  border: black;
+  background-color: rgba(0, 0, 0, 0.219);
+  border-radius: 8px;
+  width: 20%;
+  margin: 20px auto;
+}
+
+.form-section {
+  padding: 20px;
+  display: flex;
+  border: black;
+  background-color: rgba(0, 0, 0, 0.219);
+  border-radius: 8px;
+  width: 30%;
+  margin: 20px auto;
+}
+
+.form-item input{
+  padding: 10px;
+  border-radius: 15px;
+}
