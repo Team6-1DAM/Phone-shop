@@ -52,11 +52,7 @@ window.viewProduct = function() {
             // Boton de compra segun rol
             const salesButton = el('salesButton');
             let roleSession = sessionStorage.getItem("role");
-            if ((roleSession == 'admin' || roleSession == 'user')) {
-                salesButton.innerHTML += '<a href="sales.html" type="button" class="btn btn-sm px-5 py-1 btn-outline-danger"><strong>Comprar</strong></a>';
-            } else {
-                salesButton.innerHTML += '<a href="#" type="button" class="btn btn-sm btn-outline-danger"><strong>Iniciar Sesion para COMPRAR</strong></a>';
-            }
+
             // construccion de la tabla
             const productTable = el('tableBodyView');
             const row = document.createElement('tr');
@@ -104,6 +100,47 @@ window.viewProduct = function() {
                     productTable.appendChild(row8);
                 })
             }    
+            
+            if ((roleSession == 'admin' || roleSession == 'user')) {
+                salesButton.innerHTML += '<a href="javascript:addOrder(' + product.id_product + ')" type="button" class="btn btn-sm px-5 py-1 btn-outline-danger"><strong>Comprar</strong></a>';
+            } else {
+                salesButton.innerHTML += '<a href="#" type="button" class="btn btn-sm btn-outline-danger"><strong>Iniciar Sesion para COMPRAR</strong></a>';
+            }
+        });
+};
 
+// Esta claro que asi no se pasan los codigos( clave = valor???)
+window.addOrder = function(id_product) {
+    let idProduct = id_product;
+    let usernameSession = sessionStorage.getItem("username");
+    axios.get('http://localhost:8081/users/' + usernameSession)
+        .then((response) => {
+
+            if (response.status == 200) {
+                const user = response.data;
+                let idUser =user.id_user;
+                axios.get('http://localhost:8081/products/' + idProduct)
+                .then((response) => {
+                    const product = response.data;
+                    let totalPrice = product.sale_price
+                    let fechahoy = new Date();
+                    axios.post('http://localhost:8081/orders', {
+                        id_user: idUser,
+                        id_product: idProduct,
+                        order_date: fechahoy,
+                        total_price: totalPrice 
+                    })
+                    .then((response) => {
+                        // Confirmar al usuario que todo ha ido bien (o mal)
+                        if (response.status == 201) {
+                            notifyOk('Pedido Realizado');
+                        } else {
+                            notifyError('Error en el registro del pedido');
+                        }
+                    });
+
+
+                });      
+            }        
         });
 };
