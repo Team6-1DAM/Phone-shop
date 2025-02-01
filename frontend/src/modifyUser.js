@@ -60,7 +60,7 @@ window.loadUser = function() {
             const name = document.getElementById('name').value;
             const password = document.getElementById('password').value;
             const role = document.getElementById('role').value;
-            const tel = document.getElementById('tel').value;
+            const tel = document.getElementById('phone number').value;
             const address = document.getElementById('address').value;
             const zip_code = document.getElementById('zip_code').value;
             const city = document.getElementById('city').value;
@@ -69,60 +69,60 @@ window.loadUser = function() {
 
             // Validación de datos
             if (name === '') {
-                notifyError('Username is required');
+                notifyError('Username required');
                 return;
             }
 
             if (password === '') {
-                notifyError('Password is required');
+                notifyError('Password required');
                 return;
             }
 
             if (role === '') {
-                notifyError('Role is required');
+                notifyError('Role required');
                 return;
             } else {
                 let roleSession = sessionStorage.getItem("role");
                 if (roleSession != 'admin') {
                     if (role == 'admin') {
-                        notifyError('Only admins can create admins');
+                        notifyError('Admin can be created just by another admin');
                         return;
                     } else {
                         if(role != 'user'){
-                            notifyError('role has to be user');
+                            notifyError('Role need to be user');
                             return; 
                         }
                     }
                 } else {
                     if (!(role == 'admin' || role == 'user ')) {
-                        notifyError('role has to be user or admin');
+                        notifyError('Role have to be user or admin');
                         return;
                     }
                 }
             }    
 
             if (tel === '') {
-                notifyError('Telephone is required');
+                notifyError('Phone Number required');
                 return;
             }
 
             if (address === '') {
-                notifyError('Address is required');
+                notifyError('Address required');
                 return;
             }
 
             if (zip_code === '') {
-                notifyError('Zip Code is required');
+                notifyError('Postcode required');
                 return;
             }
 
             if (city === '') {
-                notifyError('City is required');
+                notifyError('City required');
                 return;
             }
 
             if (country === '') {
-                notifyError('Country is required');
+                notifyError('Country required');
                 return;
             }
 
@@ -147,9 +147,9 @@ window.loadUser = function() {
              .then((response) => {
                 // Confirmar al usuario que todo ha ido bien (o mal)
                 if (response.status == 204) {
-                    notifyOk('User modified');
+                    notifyOk('User Modified');
                 } else {
-                    notifyError('Error modifying user');
+                    notifyError('Error. Supllier not modified.');
                 }
             });
 

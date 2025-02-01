@@ -3,7 +3,7 @@
         <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AA de Entornos Retrobyte con Node y Express</title>
+        <title>Phone Shop</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <script type="module" src="modifyUser.js"></script>
@@ -17,10 +17,17 @@
                     <img src="./img/antena.gif" alt="Logo de Empresa" width="10%">
                     <div class="container-title">
                         <h1>Phone Shop</h1>
-                    </div>    
-                    <img src="nodejs.jpg" alt="Logo de NodeJs" height="10%" width="10%"/>
+                    </div>
+                    <div class="login-signin">
+                        <div class="signin">
+                            <a href="registerUser.html" class="signin-line">Sign in</a>
+                        <a href="login.html" class="signin-line">Log in</a>
+                        <div  id="logout"></div>
+                        <div class="signin-line-username" id="userJs"></div>
+                        <div class="signin-line-username" id="rolJs"></div>
+                        </div>
+                    </div>     
                 </div>
-                
                 <div class="between-sections"></div>
             </div>
         
@@ -28,11 +35,11 @@
         <div class="container">
             <ul class="nav nav-tabs">
                 <!-- <li class="nav-item">
-                    <a class="nav-link" href="indexUser.html">Listado de Usuarios</a>
+                    <a class="nav-link" href="indexUser.html">User List</a>
                 </li> -->
                 <li class="nav-item" id="menuUserAdmin"></li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="modifyUser.html">Modificacion de Usuario</a>
+                    <a class="nav-link active" aria-current="page" href="modifyUser.html">Modify User</a>
                 </li>
             </ul>
         </div> 
@@ -44,26 +51,12 @@
                 <span>d<data value=""></data></span>
                 <span>i</span>
                 <span>f</span>
-                <span>i</span>
-                <span>c</span>
-                <span>a</span>
-                <span>c</span>
-                <span>i</span>
-                <span>o</span>
-                <span>n</span>
-                <span>&NonBreakingSpace;</span>
-                <span>D</span>
-                <span>e</span>
+                <span>y</span>
                 <span>&NonBreakingSpace;</span>
                 <span>U</span>
                 <span>s</span>
-                <span>u</span>
-                <span>a</span>
-                <span>r</span>
-                <span>i</span>
-                <span>o</span>
-                <span>s</span>
-                
+                <span>e</span>
+                <span>r</span>                
                 
             </div>
         </div>
@@ -88,27 +81,27 @@
                     <input class="form-control" type="text" id="role" placeholder="user"/>
                 </div>
                 <div class="col-md-2  text-white bg-dark">
-                    <label for="tel" class="form-label">Tel</label>
+                    <label for="tel" class="form-label">Phone Number</label>
                     <input class="form-control" type="text" id="tel" placeholder ="+34987654321"/>
                 </div>
                 <div class="col-md-4  text-white bg-dark">
                     <label for="address" class="form-label">Address</label>
-                    <input class="form-control" type="text" id="address" placeholder="Calle .."/>
+                    <input class="form-control" type="text" id="address" placeholder="Avenue .."/>
                 </div>
                 <div class="col-md-2  text-white bg-dark">
-                    <label for="zip_code" class="form-label">Zip Code</label>
+                    <label for="zip_code" class="form-label">Postcode</label>
                     <input class="form-control" type="text" id="zip_code" placeholder="50500"/>
                 </div>
                 <div class="col-md-2  text-white bg-dark">
                     <label for="city" class="form-label">City</label>
-                    <input class="form-control" type="text" id="city" placeholder="Zaragoza"/>
+                    <input class="form-control" type="text" id="city" placeholder="London/Manchester"/>
                 </div>
                 <div class="col-md-2  text-white bg-dark">
                     <label for="country" class="form-label">Country</label>
-                    <input class="form-control" type="text" id="country" placeholder="España"/>
+                    <input class="form-control" type="text" id="country" placeholder="UK"/>
                 </div>
                 <div class="col-12  text-white bg-dark"> 
-                    <button type="button" class="btn btn-danger" onClick="modifyUser()">Modificacion Usuario</button>
+                    <button type="button" class="btn btn-danger" onClick="modifyUser()">Modify User</button>
                 </div>
                 
                 <div></div>
