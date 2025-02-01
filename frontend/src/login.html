@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AA de Entornos Retrobyte con Node y Express</title>
+        <title>Phone Shop</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <script type="module" src="login.js"></script>
@@ -18,10 +18,10 @@
                   <div class="login-signin">
                     <div class="signin">
                       <a href="registerUser.html" class="signin-line">Sign in</a>
-                      <a href="login.html" class="signin-line">Log in</a>
-                      <div  id="logout"></div>
-                      <div class="signin-line-username" id="userJs"></div>
-                      <div class="signin-line-username" id="rolJs"></div>
+                    <a href="login.html" class="signin-line">Log in</a>
+                    <div  id="logout"></div>
+                    <div class="signin-line-username" id="userJs"></div>
+                    <div class="signin-line-username" id="rolJs"></div>
                     </div>
           
                   </div>
@@ -32,33 +32,20 @@
         <div>
             <ul class="navigation">
                 <li class="line">
-                    <a class="link" aria-current="page" href="index.html">Listado de Productos</a>
+                    <a class="link" aria-current="page" href="index.html">Product List</a>
                 </li>
                 <li class="line">
-                    <a class="link active" href="login.html">Login de Usuario</a>
+                    <a class="link active" href="login.html">Login</a>
                 </li>
             </ul>
         </div>   
         <div class="title-words">
             <div class="shadows">
-                <span>I</span>
-                <span>n</span>
-                <span>i</span>
-                <span>c</span>
-                <span>i</span>
+                <span>L</span>
                 <span>o</span>
-                <span>&NonBreakingSpace;</span>
-                <span>d</span>
-                <span>e</span>
-                <span>&NonBreakingSpace;</span>
-                <span>s</span>
-                <span>e</span>
-                <span>s</span>
-                <span>i</span>                
-                <span>o</span>
+                <span>g</span>
+                <span>i</span>
                 <span>n</span>
-
-                
             </div>
         </div>
 
@@ -66,11 +53,11 @@
                 <form class="form-container">
                     <div class="form-item">
                         <input type="text" name="username" class="form-input" id="username" placeholder="Username">
-                        <label for="floatingInput">Usuario</label>
+                        <label for="floatingInput">Username</label>
                     </div>
                     <div class="form-item">
                         <input type="password" name="password" class="form-input" id="password" placeholder="Password">
-                        <label for="password">Contraseña</label>
+                        <label for="password">Password</label>
                     </div>
 
                     <button type="button" class="green-btn" onClick="verifyUser()">Iniciar Sesion</button>
