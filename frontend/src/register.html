@@ -3,7 +3,7 @@
         <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AA de Entornos Retrobyte con Node y Express</title>
+        <title>Phone Shop</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <script type="module" src="register.js"></script>
@@ -17,38 +17,30 @@
                   </div>    
                   <div class="login-signin">
                     <div class="signin">
-                      <a href="registerUser.html" class="signin-line">Sign in</a>
-                      <a href="login.html" class="signin-line">Log in</a>
-                      <div  id="logout"></div>
-                      <div class="signin-line-username" id="userJs"></div>
-                      <div class="signin-line-username" id="rolJs"></div>
+                        <a href="registerUser.html" class="signin-line">Sign in</a>
+                    <a href="login.html" class="signin-line">Log in</a>
+                    <div  id="logout"></div>
+                    <div class="signin-line-username" id="userJs"></div>
+                    <div class="signin-line-username" id="rolJs"></div>
                     </div>
-                  </div>  
+                </div>   
             </div>
         </header>
         <div>
             <ul class="navigation">
                 <li class="line">
-                    <a class="link"  href="index.html">Listado de Productos</a>
+                    <a class="link"  href="index.html">Product List</a>
                 </li>
                 <li class="line">
-                    <a class="link active" aria-current="page" href="register.html">ALta de Producto</a>
+                    <a class="link active" aria-current="page" href="register.html">New Product</a>
                 </li>
             </ul>
         </div>   
         <div class="title-words">
             <div class="shadows">
-                <span>R</span>
+                <span>N</span>
                 <span>e</span>
-                <span>g</span>
-                <span>i</span>
-                <span>s</span>
-                <span>t</span>
-                <span>r</span>
-                <span>o</span>
-                <span>&NonBreakingSpace;</span>
-                <span>d</span>
-                <span>e</span>
+                <span>w</span>
                 <span>&NonBreakingSpace;</span>
                 <span>P</span>
                 <span>r</span>
@@ -56,10 +48,7 @@
                 <span>d</span>
                 <span>u</span>
                 <span>c</span>
-                <span>t</span>
-                <span>o</span>
-                <span>s</span>
-                
+                <span>t</span>               
             </div>
         </div>
         <!-- <div class="container my-6 bg-dark">
@@ -75,15 +64,15 @@
                         </div>
                         <div class="form-item">
                             <label for="description" class="form-label">Description</label>
-                            <input class="form-control" type="text" id="description" placeholder="Microordenador de 8 bits"/>
+                            <input class="form-control" type="text" id="description" placeholder="Phone..."/>
                         </div>
                         <div class="form-item">
                             <label for="product_status" class="form-label">Product Status</label>
-                            <input class="form-control" type="text" id="product_status" placeholder="Bueno, con.."/>
+                            <input class="form-control" type="text" id="product_status" placeholder="Good Condition/Scratched..."/>
                         </div>
                         <div class="form-item">
                             <label for="sale_price" class="form-label">Sale Price</label>
-                            <input class="form-control" type="number" id="sale_price" placeholder="18,00"/>
+                            <input class="form-control" type="number" id="sale_price" placeholder="180,00"/>
                         </div>
                         <div class="form-item">
                             <label for="release_date" class="form-label">Release Date</label>
@@ -98,11 +87,11 @@
                             <input class="form-control" type="number" id="stock_units" placeholder ="1"/>
                         </div>
                         <div class="form-item">
-                            <label for="image" class="form-label">Imagen</label>
+                            <label for="image" class="form-label">Image</label>
                             <input class="form-control" type="file" id="image" placeholder="no_image.jpg"/>
                         </div>
                         <div class="form-item">
-                            <button type="button" class="red-btn" onClick="addProduct()">Alta producto</button>
+                            <button type="button" class="red-btn" onClick="addProduct()">New Product</button>
                         </div>
                         <!-- TODO algo para tratar si ya exite registro o no implementarlo con el id_product?? -->
                         <!-- <input type="hidden" name="id_product" id="id_product"/> -->
