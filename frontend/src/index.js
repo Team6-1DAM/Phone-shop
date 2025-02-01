@@ -18,7 +18,7 @@ window.readProducts = function() {
             let adminHTMLElement01Interior = document.createElement('a'); //Creamos un elemento que sera el hijo del que hemos creado previamente
             adminHTMLElement01Interior.classList.add("link"); //Le añadimos la clase
             adminHTMLElement01Interior.href = 'register.html'; //Le añadimos el 'href' con la direccion que queremos
-            let interior01 = document.createTextNode('Alta de Producto'); //Añadimos el contenido de TEXTO que ira dentro
+            let interior01 = document.createTextNode('New Product'); //Añadimos el contenido de TEXTO que ira dentro
             adminHTMLElement01Interior.appendChild(interior01); //Añadimos al elemento que sera el hijo el contenido de texto
             adminHTMLElement01.appendChild(adminHTMLElement01Interior); //Añadimos al elemento padre su hijo
             document.getElementById("menuUser").parentElement.appendChild(adminHTMLElement01); //añadimos al documento el elemento padre que contiene todo
@@ -28,7 +28,7 @@ window.readProducts = function() {
             let adminHTMLElement02Interior = document.createElement('a');
             adminHTMLElement02Interior.classList.add("link");
             adminHTMLElement02Interior.href = 'indexSupplier.html';
-            let interior02 = document.createTextNode('Listado de Proveedores');
+            let interior02 = document.createTextNode('Supplier List');
             adminHTMLElement02Interior.appendChild(interior02);
             adminHTMLElement02.appendChild(adminHTMLElement02Interior);
             document.getElementById("menuUser").parentElement.appendChild(adminHTMLElement02);
@@ -38,7 +38,7 @@ window.readProducts = function() {
             let adminHTMLElement03Interior = document.createElement('a');
             adminHTMLElement03Interior.classList.add("link");
             adminHTMLElement03Interior.href = 'indexUser.html';
-            let interior03 = document.createTextNode('Listado de Usuarios');
+            let interior03 = document.createTextNode('User List');
             adminHTMLElement03Interior.appendChild(interior03);
             adminHTMLElement03.appendChild(adminHTMLElement03Interior);
             document.getElementById("menuUser").parentElement.appendChild(adminHTMLElement03);
@@ -50,7 +50,7 @@ window.readProducts = function() {
                 let adminHTMLElement04Interior = document.createElement('a');
                 adminHTMLElement04Interior.classList.add("link");
                 adminHTMLElement04Interior.href = 'modifyUser.html';
-                let interior04 = document.createTextNode('Modificacion datos de tu Usuario');
+                let interior04 = document.createTextNode('Modify User');
                 adminHTMLElement04Interior.appendChild(interior04);
                 adminHTMLElement04.appendChild(adminHTMLElement04Interior);
                 document.getElementById("menuUser").parentElement.appendChild(adminHTMLElement04);
@@ -73,32 +73,34 @@ window.readProducts = function() {
             const productTable = el('tableBody');
             
             productList.forEach(product => {
-                const row = document.createElement('tr');
-                row.id = 'product-' + product.id_product;
-                
-                // let roleSession1 = localStorage.getItem("role");
-                if (roleSession == 'admin') {   
-                row.innerHTML = td(product.product_name) +
-                                td(product.description) +
-                                td(product.sale_price) +
-                                '&nbsp;&nbsp;<a class="btn btn-warning" href="modify.html?id_product=' + product.id_product + '">' +
-                                icon('edit') + 
-                                '</a>&nbsp; ' +
-                                '<a class="btn btn-danger" href="javascript:removeProduct(' + product.id_product + ')">' +
-                                icon('delete') +
-                                '</a>' +
-                                '&nbsp;&nbsp;<a class="btn btn-info" href="viewproduct.html?id_product=' + product.id_product + '">' +
-                                icon('view');
-                } else {
+                if (product.stocks_units !=0 ) { 
+                    const row = document.createElement('tr');
+                    row.id = 'product-' + product.id_product;
+                    
+                    // let roleSession1 = localStorage.getItem("role");
+                    if (roleSession == 'admin') {   
                     row.innerHTML = td(product.product_name) +
-                                td(product.description) +
-                                td(product.sale_price) +
-                                '<a class="details" href="viewproduct.html?id_product=' + product.id_product + '">' +
-                                icon('view') +'</a>';
+                                    td(product.description) +
+                                    td(product.sale_price) +
+                                    '&nbsp;&nbsp;<a class="btn btn-warning" href="modify.html?id_product=' + product.id_product + '">' +
+                                    icon('edit') + 
+                                    '</a>&nbsp; ' +
+                                    '<a class="btn btn-danger" href="javascript:removeProduct(' + product.id_product + ')">' +
+                                    icon('delete') +
+                                    '</a>' +
+                                    '&nbsp;&nbsp;<a class="btn btn-info" href="viewproduct.html?id_product=' + product.id_product + '">' +
+                                    icon('view');
+                    } else {
+                        row.innerHTML = td(product.product_name) +
+                                    td(product.description) +
+                                    td(product.sale_price) +
+                                    '<a class="details" href="viewproduct.html?id_product=' + product.id_product + '">' +
+                                    icon('view') +'</a>';
 
 
-                }                
-                productTable.appendChild(row);
+                    }                
+                    productTable.appendChild(row);
+                }
             })
             
         });
@@ -106,14 +108,14 @@ window.readProducts = function() {
 };
 // Esta claro que asi no se pasan los codigos( clave = valor???)
 window.removeProduct = function(id_product) {
-    if (confirm('¿Está seguro de que desea eliminar este producto?')) {
+    if (confirm('Are you sure you want to delete this product?')) {
         axios.delete('http://localhost:8081/products/' + id_product)
             .then((response) => {
                 if (response.status == 204) {
-                    notifyOk('Producto eliminado correctamente');
+                    notifyOk('Product deleted successfully');
                     el('product-' + id_product).remove();
                 } else {
-                    notifyError('Error en la eliminacion del producto, producto no eliminado');
+                    notifyError('Error deleting product, product not deleted');
                 }
             });
     }
