@@ -273,7 +273,6 @@ th, td {
     background-color: black;
     background-size: contain;
     color:#fff;
-    padding: 20px 0;
     bottom: 0;
     width: 100%;
     display: flex;
@@ -289,7 +288,7 @@ th, td {
     gap: 80px;
     padding: 20px 0px;
   }
-  .footer-col{
+  .footer-col {
     text-align: left;
   }
 
@@ -330,7 +329,11 @@ th, td {
 .red-btn {
   background-color: red;
   color: rgb(255, 251, 251);
+  font-size: 1rem;
+  width: 50%;
   text-decoration: none;
+  border: none;
+  border-radius: 5px;
   padding: 10px;
   font-weight: bold;
   cursor: pointer;
@@ -344,7 +347,7 @@ th, td {
 .green-btn {
    background-color:rgb(0, 255, 34);
   color: rgb(0, 0, 0);
-  width: 40%;
+  width: 50%;
   padding: 10px;
   margin: 10px;
   border: none;
@@ -364,7 +367,7 @@ th, td {
 .form-item {
   color: #FFF;
   padding: 10px;
-  font-size: 1.1vw;
+  font-size: 1rem;
 } 
 
 .form-control {
@@ -418,11 +421,51 @@ th, td {
 
 /* Productos */ 
 
-.productos-section {
+.producto-section {
+  color: #FFF;
+  display: grid;
+  width: 70%;
+  margin: auto;
+  flex-direction: column;
+}
+
+.producto-container {
+  display: grid;
+  flex-direction: column;
 
 }
 
+.producto-image {
+  margin: auto;
+  height: auto;
+  width: 450px;
+  padding: 30px 0px;
+}
+
+.producto-section h4 {
+  color: #FFF;
+  font-size: 1.2rem;
+  justify-self: center;
+}
+
+
+.producto-section .red-btn {
+  display: flex;
+  justify-self: center;
+  width: 30%;
+  margin: 15px auto 30px auto;
+  justify-content: center;
+}
+
+
 @media only screen and (max-width: 1280px) {
+
+  .producto-image {
+    margin: auto;
+    height: auto;
+    width: 50%;
+    padding: 30px 0px;
+  }
 
   .link {
     font-size: 0.9rem;
@@ -452,18 +495,20 @@ th, td {
   .footer-col h3{
     font-size: 1.1rem;
   }
-
-  .footer-row p{
-    font-size: 1.1rem;
-
+  
+  .footer-col p{
+    font-size: 0.9rem;
   }
+  .form-section {
+    width: 50%;
+  }
+
 
   .shadows{
     font-size: 2rem;
   }
 
 }
-
 @media only screen and (max-width: 768px) {
   .link {
     font-size: 0.7rem;
@@ -473,18 +518,22 @@ th, td {
     font-size: 2rem;
   }
 
+  .login-section {
+    width: 400px;
+  }
+
   .login-signin {
     font-size: 0.7rem;
     padding: 10px 20px;
   }
 
-  .login-section {
-    width: 200px;
-  }
-
-
   .footer-row{
     padding: 0px 20px;
+  }
+
+  .footer-col p{
+    font-size: 0.9rem;
+    
   }
 
 

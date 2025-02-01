@@ -73,7 +73,7 @@ window.readProducts = function() {
             const productTable = el('tableBody');
             
             productList.forEach(product => {
-                if (product.stocks_units !=0 ) { 
+                if ( product.stock_units != 0 ) { 
                     const row = document.createElement('tr');
                     row.id = 'product-' + product.id_product;
                     
@@ -94,7 +94,7 @@ window.readProducts = function() {
                         row.innerHTML = td(product.product_name) +
                                     td(product.description) +
                                     td(product.sale_price) +
-                                    '<a class="details" href="viewproduct.html?id_product=' + product.id_product + '">' +
+                                    '<a class="btn details" href="viewproduct.html?id_product=' + product.id_product + '">' +
                                     icon('view') +'</a>';
 
 
@@ -125,5 +125,5 @@ window.logoutApp = function() {
     sessionStorage.setItem("username","no user");
     sessionStorage.setItem("role","");
     location.reload();
-    notifyOk('Sesion cerrada correctamente');
+    notifyOk('Session closed successfully!');
 };

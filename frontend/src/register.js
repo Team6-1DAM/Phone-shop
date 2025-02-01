@@ -117,14 +117,14 @@ window.addProduct = function() {
                 .then((response) => {
                     // Confirmar al usuario que todo ha ido bien (o mal)
                     if (response.status == 201) {
-                        notifyOk('Producto Registrado');
+                        notifyOk('Product registered');
                     } else {
-                        notifyError('Error en el registro del producto, producto no registrado');
+                        notifyError('Error registering product');
                     }
                 });
 
             }).catch((error) => {
-                notifyError('Se ha producido un error al enviar los datos de imagen');
+                notifyError('Error sending image data');
                 console.log(error);
             });
 
