@@ -32,17 +32,16 @@
             </div>
         
         </header>
-        <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link" href="indexSupplier.html">Suppliers List</a>
+        <div>
+            <ul class="navigation">
+                <li class="line">
+                    <a class="link" href="indexSupplier.html">Suppliers List</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="modifySupplier.html">Modify Supplier</a>
+                <li class="line">
+                    <a class="link active" aria-current="page" href="modifySupplier.html">Modify Supplier</a>
                 </li>
             </ul>
         </div> 
-        <div class="between-sections"></div>   
         <div class="title-words">
             <div class="shadows">
                 <span>M</span>
@@ -63,51 +62,48 @@
             </div>
         </div>
 
-        <div class="py-5 container">    
-            <form class="row g-3 needs-validation bg-dark border-dark">
-                <div></div>
-                <div class="mb-3  text-white bg-dark">
+        <div class="form-section">    
+            <form class="form-container">
+                <div class="form-item">
                     <label for="product_name" class="form-label">Supplier Name</label>
                     <input class="form-control" type="text" id="name" placeholder="CEX"/>
                 </div>
-                <div class="mb-3  text-white bg-dark">
+                <div class="form-item">
                     <label for="description" class="form-label">Address</label>
                     <input class="form-control" type="text" id="address" placeholder="Avenue .."/>
                 </div>
-                <div class="mb-3  text-white bg-dark">
+                <div class="form-item">
                     <label for="product_status" class="form-label">City</label>
                     <input class="form-control" type="text" id="city" placeholder="London/Manchester"/>
                 </div>
-                <div class="col-md-2  text-white bg-dark">
+                <div class="form-item">
                     <label for="sale_price" class="form-label">Country</label>
                     <input class="form-control" type="text" id="country" placeholder="UK"/>
                 </div>
-                <div class="col-md-2  text-white bg-dark">
+                <div class="form-item">
                     <label for="release_date" class="form-label">Postcode</label>
                     <input class="form-control" type="text" id="zip_code" placeholder="50500"/>
                 </div>
-                <div class="col-md-2  text-white bg-dark">
+                <div class="form-item">
                     <label for="stock_units" class="form-label">Phone Number</label>
                     <input class="form-control" type="text" id="tel" placeholder ="+34987654321"/>
                 </div>
-                <div class="col-md-4  text-white bg-dark">
+                <div class="form-item">
                     <label for="image" class="form-label">Website</label>
                     <input class="form-control" type="text" id="website" placeholder="www.SupplierWeb.com"/>
                 </div>
-                <div class="col-md-4  text-white bg-dark">
+                <div class="form-item">
                     <label for="image" class="form-label">Email</label>
                     <input class="form-control" type="text" id="email" placeholder="supplier@supplier.com"/>
                 </div>
-                <div class="col-12  text-white bg-dark"> 
-                    <button type="button" class="btn btn-danger" onClick="modifySupplier()">Modify Supplier</button>
+                <div class="form-item"> 
+                    <button type="button" class="green-btn" onClick="modifySupplier()">Modify Supplier</button>
                 </div>
                 <!-- <input type="hidden" name="id_product" id="id_product"/> -->
                 <div></div>
             </form>
         </div>
-        <div class="between-sections"></div>
-        <div class="between-sections"></div>
-        <div class="between-sections"></div>
+
 
         <!-- footer -->
       

@@ -42,7 +42,6 @@ window.loadUser = function() {
         .then((response) => {
             const user = response.data;
             document.getElementById('name').value = user.name;
-            // document.getElementById('username').value= user.username;
             document.getElementById('password').value = user.password;
             document.getElementById('role').value = user.role;
             document.getElementById('tel').value = user.tel;
@@ -60,12 +59,11 @@ window.loadUser = function() {
             const name = document.getElementById('name').value;
             const password = document.getElementById('password').value;
             const role = document.getElementById('role').value;
-            const tel = document.getElementById('phone number').value;
+            const tel = document.getElementById('tel').value;
             const address = document.getElementById('address').value;
             const zip_code = document.getElementById('zip_code').value;
             const city = document.getElementById('city').value;
             const country = document.getElementById('country').value;
-            
 
             // Validación de datos
             if (name === '') {
@@ -149,13 +147,11 @@ window.loadUser = function() {
                 if (response.status == 204) {
                     notifyOk('User Modified');
                 } else {
-                    notifyError('Error. Supllier not modified.');
+                    notifyError('Error. Supplier not modified.');
                 }
             });
 
            
         };
 
-       
-            
 };
