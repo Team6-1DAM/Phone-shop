@@ -12,26 +12,26 @@
   }
   
   h1 {
-      font-size: 12vw;
+      font-size: 3rem;
       margin: 0;
       padding: 0;
       font-weight: bold;
     }
   
   h2 {
-      font-size: 2.4vw;
+      font-size: 2rem;
     }
   
   h3 {
-      font-size: 1.8vw;
+      font-size: 1.5rem;
     }
   
-  p{
-    font-size: 1.2vw;
-  }
+  p {
+      font-size: 1.1rem;
+    }
     
   .bg-image {
-    background:linear-gradient(45deg, #e73a06, #70c7ca,#de8282,#23d541);
+    background:linear-gradient(45deg, #32d1d1, #70c7ca,#5385f1,#23d541);
     background-size: 400% 400%;
     animation: gradient 12s ease-in infinite;
   }
@@ -51,21 +51,19 @@
   }
 
   .header-class img{
-    padding: 50px;
+    padding: 20px 50px;
   }
-
-
 
   .container-title h1{
     color: black;
-    font-size: 8vw;
+    font-size: 7rem;
   }
   
   .login-signin{
     padding: 50px 100px;
     display:flex;
     flex-direction: row;
-    font-size: larger;
+    font-size: 1.2rem;
   }
   
   .signin{
@@ -89,12 +87,38 @@
   
   .signin-line:hover {
     background-color: #ddd;
-    color: #b00000;
+    color: black;
     border-radius: 6%; 
-    box-shadow: 0px 0px 7px #b00000 inset,
-                  0px 0px 7px #b00000;  
+    box-shadow: 0px 0px 7px #000000;
+  }
+
+  .login-section {
+    padding: 20px;
+    display: flex;
+    border: black;
+    background-color: rgba(0, 0, 0, 0.219);
+    border-radius: 8px;
+    width: 20%;
+    margin: 20px auto;
   }
   
+
+  .login-section input[type="text"],
+  .login-section input[type="password"] {
+    width: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .login-section input[type="text"]:focus,
+  .login-section input[type="password"]:focus {
+    border-color: black;
+    outline: none;
+  }
+  
+
 
   .title-words {
     width: 100%;
@@ -112,7 +136,7 @@
       letter-spacing: -0.05em;
       user-select: none;
       text-transform: uppercase;
-      font-size: 2.5vw;
+      font-size: 3rem;
       transition: all 0.25s ease-out;
   }
   .shadows:hover {
@@ -132,6 +156,8 @@
     top: 0;
     width: 100%;
     z-index: 999;
+    display: flex;
+    justify-content: center;
   }
 
 
@@ -141,6 +167,7 @@
     color: black;
     padding: 0;
     margin: 0;
+    font-size: 1.2rem;
   }
   
   .line {
@@ -179,39 +206,43 @@ table {
   margin: 2% auto;
   overflow-y: scroll;
   position: static;
-  width: 65%;
+  width: auto;
   border-radius: 8px;
-  border: black ;
+  border: 1px solid rgba(0, 0, 0, 0.356) ;
+  background-color: rgba(0, 0, 0, 0.192);
   padding: 20px;
+  color: white;
+ 
 }
 
 thead th {
-  background: darkgray;
+  background-color: rgba(169, 169, 169, 0.247);
   color: #FFF;
   letter-spacing: 2px;
   text-transform: uppercase;
+  justify-self: center;
 }
 
 tbody tr:nth-child(even){
-  background: gainsboro;
+  background-color: rgba(220, 220, 220, 0.253);
 }
 
 tr {
-  background: #f4f7f8;
+  background-color: #f4f7f800;
   border-bottom: 1px solid #FFF;
   margin-bottom: 5px;
 }
 
 th, td {
-  padding: 10px 20px;
+  padding: 10px 10px;
   text-align: left;
-  width: 33.3333%;
+  margin: 10px;
 }
 
 .details {
   margin: 10px 20px;
   position: relative;
-  top:10px;
+  top: 10px;
 }
 
   .networks {
@@ -228,13 +259,21 @@ th, td {
   .icon {
     width: 25px;
   }
+
+  .btn {
+    text-decoration: none;
+    color: #FFF;
+    vertical-align: middle;
+    padding: 6px;
+    align-content: center;
+  }
   
  
-  footer{
+  footer {
     background-color: black;
     background-size: contain;
     color:#fff;
-    padding: 20 px 0;
+    padding: 20px 0;
     bottom: 0;
     width: 100%;
     display: flex;
@@ -242,7 +281,6 @@ th, td {
   }
    
   .footer-container{
-    width:100%;
     padding: 20px 0px;
   }
   .footer-row{
@@ -276,7 +314,7 @@ th, td {
   .footer-col ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2vw;
+    font-size: 1rem;
   }
 
   .footer-col ul li:hover {
@@ -285,7 +323,9 @@ th, td {
   }   
 
 
-/* LOGIN STYLES */
+/* Form styles */
+
+/* Buttons */
 
 .red-btn {
   background-color: red;
@@ -293,17 +333,33 @@ th, td {
   text-decoration: none;
   padding: 10px;
   font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.red-btn:hover {
+  background-color: rgba(255, 0, 0, 0.521);
 }
 
 .green-btn {
-   background-color:rgb(0, 255, 34)d;
+   background-color:rgb(0, 255, 34);
   color: rgb(0, 0, 0);
-  text-decoration: none;
+  width: 40%;
   padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
   font-weight: bold;
-  border-radius: 20px;
-  margin-left: 25%;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
+
+.green-btn:hover{
+  background-color: rgba(0, 255, 34, 0.527);
+}
+
+/* Form containers */
 
 .form-item {
   color: #FFF;
@@ -322,16 +378,6 @@ th, td {
 
 }
 
-.login-section {
-  padding: 20px;
-  display: flex;
-  border: black;
-  background-color: rgba(0, 0, 0, 0.219);
-  border-radius: 8px;
-  width: 20%;
-  margin: 20px auto;
-}
-
 .form-section {
   padding: 20px;
   display: flex;
@@ -342,7 +388,104 @@ th, td {
   margin: 20px auto;
 }
 
-.form-item input{
+.form-item label{
+  font-weight: bold;
+}
+
+/* Form inputs */
+
+.form-section input[type="text"],
+.form-section input[type="number"],
+.form-section input[type="date"],
+.form-section input[type="email"] {
+  width: 100%;
   padding: 10px;
-  border-radius: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+
+.form-section input[type="text"]:focus,
+.form-section input[type="number"]:focus,
+.form-section input[type="date"]:focus,
+.form-section input[type="email"]:focus {
+  border-color: black;
+  outline: none;
+}
+
+
+
+/* Productos */ 
+
+.productos-section {
+
+}
+
+@media only screen and (max-width: 1280px) {
+
+  .link {
+    font-size: 0.9rem;
+  }
+
+  .container-title h1{
+    font-size: 4rem;
+  }
+
+  .login-signin {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .login-section {
+    width: 300px;
+  }
+
+  .footer-row{
+    padding: 0px 20px;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.9rem;
+  }
+
+  .footer-col h3{
+    font-size: 1.1rem;
+  }
+
+  .footer-row p{
+    font-size: 1.1rem;
+
+  }
+
+  .shadows{
+    font-size: 2rem;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .link {
+    font-size: 0.7rem;
+  }
+
+  .container-title h1{
+    font-size: 2rem;
+  }
+
+  .login-signin {
+    font-size: 0.7rem;
+    padding: 10px 20px;
+  }
+
+  .login-section {
+    width: 200px;
+  }
+
+
+  .footer-row{
+    padding: 0px 20px;
+  }
+
+
 }

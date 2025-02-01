@@ -9,11 +9,11 @@ window.loadUser = function() {
     if (userSession == 'admin'){
         //Elemento5 pestaña para admin
         let adminHTMLElement05 = document.createElement('li');
-        adminHTMLElement05.classList.add("nav-item");
+        adminHTMLElement05.classList.add("line");
         let adminHTMLElement05Interior = document.createElement('a');
-        adminHTMLElement05Interior.classList.add("nav-link");
+        adminHTMLElement05Interior.classList.add("link");
         adminHTMLElement05Interior.href = 'indexUser.html';
-        let interior05 = document.createTextNode('Listado de Usuarios');
+        let interior05 = document.createTextNode('User List');
         adminHTMLElement05Interior.appendChild(interior05);
         adminHTMLElement05.appendChild(adminHTMLElement05Interior);
         document.getElementById("menuUserAdmin").parentElement.appendChild(adminHTMLElement05);
@@ -23,11 +23,11 @@ window.loadUser = function() {
     } else {
         //Elemento6 pestaña para no admin
         let adminHTMLElement06 = document.createElement('li');
-        adminHTMLElement06.classList.add("nav-item");
+        adminHTMLElement06.classList.add("line");
         let adminHTMLElement06Interior = document.createElement('a');
-        adminHTMLElement06Interior.classList.add("nav-link");
+        adminHTMLElement06Interior.classList.add("link");
         adminHTMLElement06Interior.href = 'index.html';
-        let interior06 = document.createTextNode('Listado de Productos');
+        let interior06 = document.createTextNode('Product List');
         adminHTMLElement06Interior.appendChild(interior06);
         adminHTMLElement06.appendChild(adminHTMLElement06Interior);
         document.getElementById("menuUserAdmin").parentElement.appendChild(adminHTMLElement06);
@@ -69,60 +69,60 @@ window.loadUser = function() {
 
             // Validación de datos
             if (name === '') {
-                notifyError('El nombre del usuario es un campo obligatorio');
+                notifyError('Username is required');
                 return;
             }
 
             if (password === '') {
-                notifyError('Password es un campo obligatorio');
+                notifyError('Password is required');
                 return;
             }
 
             if (role === '') {
-                notifyError('Role es un campo obligatorio');
+                notifyError('Role is required');
                 return;
             } else {
                 let roleSession = sessionStorage.getItem("role");
                 if (roleSession != 'admin') {
                     if (role == 'admin') {
-                        notifyError('Solo lo puede hacer otro admin');
+                        notifyError('Only admins can create admins');
                         return;
                     } else {
                         if(role != 'user'){
-                            notifyError('role tiene que ser user');
+                            notifyError('role has to be user');
                             return; 
                         }
                     }
                 } else {
                     if (!(role == 'admin' || role == 'user ')) {
-                        notifyError('role tiene que ser user o admin');
+                        notifyError('role has to be user or admin');
                         return;
                     }
                 }
             }    
 
             if (tel === '') {
-                notifyError('Telefono es un campo obligatorio');
+                notifyError('Telephone is required');
                 return;
             }
 
             if (address === '') {
-                notifyError('Direccion es un campo obligatorio');
+                notifyError('Address is required');
                 return;
             }
 
             if (zip_code === '') {
-                notifyError('Codigo postal es un campo obligatorio');
+                notifyError('Zip Code is required');
                 return;
             }
 
             if (city === '') {
-                notifyError('Ciudad es un campo obligatorio');
+                notifyError('City is required');
                 return;
             }
 
             if (country === '') {
-                notifyError('Pais es un campo obligatorio');
+                notifyError('Country is required');
                 return;
             }
 
@@ -147,9 +147,9 @@ window.loadUser = function() {
              .then((response) => {
                 // Confirmar al usuario que todo ha ido bien (o mal)
                 if (response.status == 204) {
-                    notifyOk('Usuario Modificado');
+                    notifyOk('User modified');
                 } else {
-                    notifyError('Error en la modificacion del usuario, proveedor no modificado');
+                    notifyError('Error modifying user');
                 }
             });
 
